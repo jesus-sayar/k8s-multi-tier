@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rsvp
+  namespace: testing-jsayar  
+  labels:
+    apps: rsvp
+spec:
+  type: NodePort
+  ports:
+  - name: tcp-31081-5000
+    nodePort: 31081
+    port: 5000
+    protocol: TCP
+  selector:
+    app: rsvp
